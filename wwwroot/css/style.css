@@ -1,6 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap);   
-
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap);
 body, a {
   color: black;
 }
@@ -23,6 +22,7 @@ a:visited {
   justify-content: flex-end;
   align-items: center;
   width: 90%;
+  margin-top: 10px;
 }
 .navbar-topmenu .section-one .company-fact {
   margin-right: 30px;
@@ -47,20 +47,36 @@ a:visited {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 10px;
   width: 90%;
 }
 .navbar-topmenu .section-two .links-topmenu {
+  flex-grow: 1;
   display: flex;
-  justify-content: center;
-  margin-left: 29%;
+  justify-content: flex-end;
+  padding-right: 39%;
+  margin-bottom: 30px;
 }
 .navbar-topmenu .section-two .links-topmenu a {
-  margin-right: 25px;
+  display: inline-block;
+  color: #191919;
   text-decoration: none;
+  margin-right: 20px;
+  position: relative;
 }
-.navbar-topmenu .section-two .links-topmenu a:hover {
-  text-transform: uppercase;
-  color: #FF4500;
+.navbar-topmenu .section-two .links-topmenu a.active {
+  font-weight: 500;
+}
+.navbar-topmenu .section-two .links-topmenu a.active::after, .navbar-topmenu .section-two .links-topmenu a:hover::after {
+  content: "";
+  position: absolute;
+  font-weight: 500;
+  height: 2px;
+  width: 15px;
+  background-color: #191919;
+  left: 50%;
+  bottom: -3px;
+  transform: translate(calc(50% - 15px));
 }
 .navbar-topmenu .section-two .button-login {
   width: 120px;
@@ -72,6 +88,7 @@ a:visited {
   justify-content: center;
   transition: background-color 0.3s, color 0.3s;
   text-decoration: none;
+  margin-bottom: 20px;
 }
 .navbar-topmenu .section-two .button-login:hover {
   background-color: #000;
@@ -1672,4 +1689,4 @@ footer .end-footer .social-media a i {
 .carousel-control-next-icon::before {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
-}        
+}
