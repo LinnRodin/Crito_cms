@@ -26,14 +26,12 @@
 </head>
     <body> 
     
+     @await Html.PartialAsync("_Header")
     
-    
-    
+    <div class="wrapper-footer-home"
     @RenderBody()
-    
     @await Html.PartialAsync("_Footer")
-    @await Html.PartialAsync("_Header")
-    
+    </div>
     
         <script src="js/script.js"></script>
     </body>

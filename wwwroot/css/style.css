@@ -4,6 +4,13 @@ body, a {
   color: black;
 }
 
+.wrapper-footer-home {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 a:visited {
   color: black;
 }
