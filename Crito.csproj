@@ -18,6 +18,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\images\logos\" />
     <Folder Include="wwwroot\images\details\" />
+    <Folder Include="wwwroot\images\ad_assets\" />
   </ItemGroup>
 
   <PropertyGroup>
