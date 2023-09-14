@@ -1,6 +1,10 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.PageShowcase>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "_MasterLayout.cshtml";
+}
+
 @{
 	Layout = "_MasterLayout.cshtml";
 	ViewData["PageTitle"] = @Model.Value("pageTitle");
@@ -11,10 +15,10 @@
 
     <header>
         
-     
+     @await Html.PartialAsync("_NavSection")
      @await Html.PartialAsync("_ShowcaseSection")
     </header>
    
    <main>
-        @await Html.PartialAsync("_CompanyBrandSection")
+       
    </main>
