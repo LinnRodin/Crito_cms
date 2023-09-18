@@ -15,7 +15,7 @@
                   @foreach (var item in selection.OrderBy(x => x.Level))
                    {
            
-                     <a href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                     <a href="@item.Url(PublishedUrlProvider)" class="me-3">@item.Name</a>
                      
                    }
                 <span>@Model.Name</span>
