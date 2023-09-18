@@ -15,7 +15,6 @@
 }
 
 
-
   <!-- header start -->
         <header>
             <section class="navbar-topmenu">
@@ -37,19 +36,13 @@
                     <div class="section-two">
                         <div class="links-topmenu">
                             <a class="@(Model.Id == site.Id ? "active": null)" href="site.Url()">@site.Name</a>
-                            
-                            <a href="/services">Service</a>
-                            <a href="/news">News</a>
-                            <a href="/contact">Contact</a>
                         
                             @if (selection?.Length > 0)
                             {
                                 @foreach (var item in selection)
                                 {   
-                                    <a class="@(Model.Id == site.Id ? "active": null)" href="site.Url()">@site.Name</a>
-                                    <li class="@(item.IsAncestorOrSelf(Model) ? "current" : null)">
-                                        <a href="@item.Url(PublishedUrlProvider)">@item.Name</a>
-                                    </li>
+                                    <a class="@(item.IsAncestorOrSelf(Model) ? "active": null)" href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                                    
                                 }
                             }
 
