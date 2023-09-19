@@ -390,14 +390,14 @@ a:visited {
   font-weight: bold;
   margin-bottom: 40px;
 }
-.beige-box .container .content-box {
+.beige-box .container .content-box .umb-block-list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 1320px;
   margin-bottom: 20px;
 }
-.beige-box .container .content-box .tile {
+.beige-box .container .content-box .umb-block-list .tile {
   width: 308px;
   height: 333px;
   background-color: white;
@@ -407,13 +407,17 @@ a:visited {
   position: relative;
   margin-bottom: 20px;
 }
-.beige-box .container .content-box .tile h6 {
+.beige-box .container .content-box .umb-block-list .tile.white-tile:hover {
+  background-color: #F0D082;
+  color: black;
+}
+.beige-box .container .content-box .umb-block-list .tile h6 {
   margin-top: 50px;
 }
-.beige-box .container .content-box .tile p {
+.beige-box .container .content-box .umb-block-list .tile p {
   margin-bottom: 50px;
 }
-.beige-box .container .content-box .tile .decorative-stripe {
+.beige-box .container .content-box .umb-block-list .tile .decorative-stripe {
   width: 50px;
   height: 5px;
   background-color: black;
@@ -421,7 +425,7 @@ a:visited {
   top: 20px;
   left: 20px;
 }
-.beige-box .container .content-box .tile .circle-btn {
+.beige-box .container .content-box .umb-block-list .tile .circle-btn {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -434,25 +438,22 @@ a:visited {
   justify-content: center;
   text-decoration: none;
 }
-.beige-box .container .content-box .tile.yellow-tile {
-  background-color: #F0D082;
-}
-.beige-box .container .content-box .black-btn, .beige-box .container .content-box .white-btn {
+.beige-box .container .content-box .umb-block-list .black-btn {
   background-color: black;
   color: white;
   border: none;
   transition: background-color 0.3s, color 0.3s;
   text-decoration: none;
 }
-.beige-box .container .content-box .black-btn:hover, .beige-box .container .content-box .white-btn:hover {
+.beige-box .container .content-box .umb-block-list .black-btn:hover {
   background-color: white;
   color: black;
 }
-.beige-box .container .content-box .white-btn {
+.beige-box .container .content-box .umb-block-list .white-btn {
   background-color: white;
   color: black;
 }
-.beige-box .container .content-box .white-btn:hover {
+.beige-box .container .content-box .umb-block-list .white-btn:hover {
   background-color: #000;
   color: white;
 }
@@ -464,6 +465,7 @@ a:visited {
   margin-bottom: 50px;
   transition: background-color 0.3s, color 0.3s;
   text-decoration: none;
+  display: inline-block;
 }
 .beige-box .container .browse-btn:hover {
   background-color: #000;
