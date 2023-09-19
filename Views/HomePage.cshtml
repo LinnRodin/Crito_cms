@@ -6,3 +6,32 @@
 }
 
 @await Html.PartialAsync("_CompanyBrandSection")
+
+ 
+  <!-- feature start -->
+    <section class="showcase-two">
+        <div class="container grid-container">
+            <!-- Vänster sida -->
+            <div class="showcase-two-leftside">
+                <h2 class="feature-title">@Model.Value("serviceFeaturesSectionTitle")</h2>
+                <div class="second-title">@Model.Value("serviceFeaturesHeading")</div>
+                <div class="button-learnmore">
+                    <a href="@Model.Value("showcaseButtonsUrl")" class="yellow-button">@Model.Value("showcaseButtonText")<i class="fa-solid fa-arrow-trend-up"></i></a>
+                </div>
+            </div>
+       
+            <div class="showcase-two-rightside">
+                @Html.GetBlockListHtml(Model.ServiceFeatures)
+            </div>
+        </div>
+    </section>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
