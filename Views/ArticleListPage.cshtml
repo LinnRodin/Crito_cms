@@ -22,40 +22,37 @@
                 <div class="carousel-item active">
                     <div class="wrapper-cards-news">
                         
-                 
-                      @{
-                	    var selection = Umbraco?.Content(Guid.Parse("7c3e43dd-b960-49d3-98ca-c1c080a86c8f"))?
-                        .ChildrenOfType("articleContentPage")?
-                        .Where(x => x.IsVisible())
-                        .OrderByDescending(x => x.CreateDate).ToList();
-                      }
+               @{
+                	var selection = Umbraco?.Content(Guid.Parse("7c3e43dd-b960-49d3-98ca-c1c080a86c8f"))?
+                    .ChildrenOfType("articleContentPage")?
+                    .Where(x => x.IsVisible())
+                    .OrderByDescending(x => x.CreateDate).ToList();
+                }
                     
-                    @if(selection != null)
-                    {
-                    	    @foreach (var item in selection)
-                	    {   
-                	        var url = item.Url();
-                	        var date = item.CreateDate;
-                	        var image = item.Value<IpublishedContent>("newsImage");
-                	        var categories = item.Value("newsCategory");
+                @if(selection != null)
+                {
+                    @foreach (var item in selection)
+                	{   
+                	    var url = item.Url();
+                	    var date = item.CreateDate;
+                	    var image = item.Value<IPublishedContent>("newsImage");
+                	    var category = item.Value("newsCategory");
+                	    var title = item.Name();
+                	    var description = item.Value("newsPreamble");
                 	   
-                	      <a class="card-link" href="news_details.html">
-                            <div class="card-body-news">
-                                <div class="date-stamp">12 Nov</div>
-                                <img class="linkedin-female" src="images/ad_assets/linkedin-sales-solutions-Mis5fyJi7Q0-unsplash.jpg" alt="Image Description">
-                                <p>@categories</p>
-                                <h6>How To Use Digitalization In The Classroom</h6>
-                                <p>Lorem Ipsum, Lorem Ipsum.</p>
-                            </div>
-                          </a>                
-                 
-                	   	<li>
-                			<a href="@item.Url()">@item.Name()</a>
-                		</li>
-
-                	    }
+                	  <a class="card-link" href="@url">
+                        <div class="card-body-news">
+                            <div class="date-stamp">@date.ToString("dd")</div>
+                             <div>@date.ToString("MMM")</div>
+                            <img class="linkedin-female" src="@image?.Url()" alt="">
+                            <p>@category</p>
+                            <h6>@title</h6>
+                            <p>@description</p>
+                        </div>
+                      </a>               
+                	}
                     
-                     }
+                }
                      
                     </div>
                 </div>
