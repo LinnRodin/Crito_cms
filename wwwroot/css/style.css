@@ -1332,23 +1332,24 @@ footer .end-footer .social-media a i {
   align-items: flex-start;
   position: relative;
 }
-.card-body-news .linkedin-female {
-  width: 420px;
-  height: 230px;
-}
-.card-body-news .date-stamp {
+.card-body-news .date-stamp, .card-body-news .date-month {
   position: absolute;
-  top: 20px;
   left: 20px;
   background-color: #F0D082;
   color: black;
   font-weight: bold;
-  padding: 10px;
+  padding: 5px;
   width: 56px;
-  height: 64px;
+  height: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.card-body-news .date-stamp {
+  top: 20px;
+}
+.card-body-news .date-month {
+  top: 52px;
 }
 .card-body-news img {
   width: 100%;
