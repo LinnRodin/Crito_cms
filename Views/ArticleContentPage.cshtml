@@ -1,7 +1,176 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticleContentPage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Services;
+@using Umbraco.Cms.Core.Models.PublishedContent;
+@inject IUserService UserService;
+
 @{
 	Layout = "_MasterLayoutBreadcrumb.cshtml";
+	var userService = UserService;
+	var image = Model.Value<IPublishedContent>("newsImage");
+	ViewData["PageTitle"] = "News & Articles";
 }
 
+<div class="wrapper-digit-sidebar">
+    <!-- article -->
+    <section class="article-digitalization">
+        <div class="container-digitalization">
+          <div class="header-digitalization">
+            <h1>@Model.Name</h1>
+            <div class="info">
+              <p>@Model.CreateDate.ToString("MMM dd, yyyy")</p>
+              <p>@Model.Value("newsCategory")</p>
+              <p>@Model.CreatorName(UserService)</p>
+            </div>
+          </div>
+          <div class="left-center-side">
+            <img src="@image.Url()" alt="Image Description">
+            
+                @Model.Value("newsContent")
+           
+          
+            <div class="box-details">
+              <div class="details-row-circles">
+                 @foreach(var tag in Model.Value<IEnumerable<string>> ("newsTags"))
+                 {
+                    <p>@tag</p>
+                 
+                 }
+             
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+   <!-- article -->
+
+    <!-- Sidebar right -->
+    <div class="sidebar-details">
+        <div class="sidebar-container">
+            <div class="container">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." style="border-radius: 50px;">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-magnifying-glass" style="color: black"></i>
+                        </span>
+                    </div>
+                </div>                  
+            </div>
+            <div class="box-one-sidebar">
+                <h6>Recent Posts</h6>
+                <p>How To Blow Through Capital At An<br> Incredible Rate</p>
+                <p class="date-details">Jan 14, 2023</p>
+                <p>How To Blow Through Capital At An<br> Incredible Rate</p>
+                <p class="date-details">Jan 14, 2023</p>
+                <p>How To Blow Through Capital At An<br> Incredible Rate</p>
+                <p class="date-details">Jan 14, 2023</p>
+                <p>How To Blow Through Capital At An<br> Incredible Rate</p>
+                <p class="date-details">Jan 14, 2023</p>
+            </div>
+            <div class="box-two-sidebar">
+                <h6>Categories </h6>
+                <p>Technology - <span>16 Posts</span></p>
+                <p>Freelancing - <span>16 Posts</span></p>
+                <p>Writing - <span>12 Posts</span></p>
+                <p>Marketing - <span>20 Posts</span></p>
+                <p>Business - <span>10 Posts</span></p>
+                <p>Education - <span>8 Posts</span></p>
+            </div>
+        </div>
+    </div>
+    <!-- sidebar end -->
+</div>
+
+
+
+<!-- Our News And Articles-->
+<div class="wrapper-details">
+    <div class="container-details">
+        <!-- Header Section -->
+        <div class="header-details">
+            <div class="left">
+                <h6>Article & News</h6>
+                <h1>Get Every Single Article And News</h1>
+            </div>
+            <div class="right">
+                <button class="button-details">
+                    Browse Articles <i class="fa-solid fa-arrow-trend-up"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Pagination Section -->
+        <div id="details-carouselControls" class="details-carousel-slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- News Cards Section -->
+                <div class="carousel-item active">
+                    <div class="cards-news-details">
+                        <div class="wrapper-cards-details">
+                            <!-- Row 1 -->
+                            <div class="card-body-details">
+                                <div class="date-stamp">12 Nov</div>
+                                <img src="images/ad_assets/linkedin-sales-solutions-Mis5fyJi7Q0-unsplash.jpg" alt="Image Description">
+                                <p>Business</p>
+                                <h6>How To Use Digitalization In The Classroom</h6>
+                                <p>Lorem Ipsum, Lorem Ipsum.</p>
+                            </div>
+                            <div class="card-body-details">
+                                <div class="date-stamp">7 Nov</div>
+                                <img src="images/ad_assets/emiliano-vittoriosi-vEN1bsdSjxM-unsplash.jpg" alt="Image Description">
+                                <p>Business</p>
+                                <h6>How To Use Digitalization In The Classroom</h6>
+                                <p>Lorem Ipsum, Lorem Ipsum.</p>
+                            </div>
+                            <div class="card-body-details">
+                                <div class="date-stamp">19 Dec</div>
+                                <img src="images/ad_assets/kobu-agency-ipARHaxETRk-unsplash.jpg" alt="Image Description">
+                                <p>Business</p>
+                                <h6>How To Use Digitalization In The Classroom</h6>
+                                <p>Lorem Ipsum, Lorem Ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="cards-news-details">
+                        <div class="wrapper-cards-details">
+                            <!-- Row 2 -->
+                            <div class="card-body-details">
+                                <div class="date-stamp">12 Nov</div>
+                                <img src="~images/ad_assets/linkedin-sales-solutions-Mis5fyJi7Q0-unsplash.jpg" alt="Image Description">
+                                <p>Business</p>
+                                <h6>How To Use Digitalization In The Classroom</h6>
+                                <p>Lorem Ipsum, Lorem Ipsum.</p>
+                            </div>
+                            <div class="card-body-details">
+                                <div class="date-stamp">7 Nov</div>
+                                <img src="images/ad_assets/emiliano-vittoriosi-vEN1bsdSjxM-unsplash.jpg" alt="Image Description">
+                                <p>Business</p>
+                                <h6>How To Use Digitalization In The Classroom</h6>
+                                <p>Lorem Ipsum, Lorem Ipsum.</p>
+                            </div>
+                            <div class="card-body-details">
+                                <div class="date-stamp">19 Dec</div>
+                                <img src="images/ad_assets/kobu-agency-ipARHaxETRk-unsplash.jpg" alt="Image Description">
+                                <p>Business</p>
+                                <h6>How To Use Digitalization In The Classroom</h6>
+                                <p>Lorem Ipsum, Lorem Ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="details-carousel-control-prev" type="button" data-bs-target="#details-carouselControls" data-bs-slide="prev">
+                <span class="details-carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="details-carousel-control-next" type="button" data-bs-target="#details-carouselControls" data-bs-slide="next">
+                <span class="details-carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
