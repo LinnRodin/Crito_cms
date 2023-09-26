@@ -30,44 +30,44 @@
     <div class="container-news">
         <!-- Header Section -->
         <div class="header-news">
-            <h1>Our News & Articles</h1>  
+            <h1>Our News & Articles</h1>
         </div>
-        
+
         <!-- Carousel Section -->
         <div id="carouselNewsControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <!-- Page 1 -->
                 <div class="carousel-item active">
                     <div class="wrapper-cards-news">
-                    
-                @if(selection != null)
+
+                        @if(selection != null)
                 {
-                    @foreach (var item in selection)
-                	{   
+                        @foreach (var item in selection)
+                	{
                 	    var url = item.Url();
                 	    var date = item.CreateDate;
                 	    var image = item.Value<IPublishedContent>("newsImage");
                 	    var category = item.Value("newsCategory");
                 	    var title = item.Name();
                 	    var description = item.Value("newsPreamble");
-                	   
-                	  <a class="card-link" href="@url">
-                        <div class="card-body-news">
-                            <div class="date-stamp">@date.ToString("dd")</div>
-                             <div class="date-month">@date.ToString("MMM")</div>
-                            <img class="linkedin-female" src="@image?.Url()" alt="">
-                            <p>@category</p>
-                            <h6>@title</h6>
-                            <p>@description</p>
-                        </div>
-                      </a>               
+
+                        <a class="card-link" href="@url">
+                            <div class="card-body-news">
+                                <div class="date-stamp">@date.ToString("dd")</div>
+                                <div class="date-month">@date.ToString("MMM")</div>
+                                <img class="linkedin-female" src="@image?.Url()" alt="">
+                                <p>@category</p>
+                                <h6>@title</h6>
+                                <p>@description</p>
+                            </div>
+                        </a>
                 	}
-                    
+
                 }
-                     
+
                     </div>
                 </div>
-                 <!-- Page 2 -->
+                <!-- Page 2 -->
                 <div class="carousel-item">
                     <div class="wrapper-cards-news">
                         <a class="card-link" href="news_details.html">
@@ -80,105 +80,112 @@
                                 <p>Lorem Ipsum, Lorem Ipsum.</p>
                             </div>
                         </a>
-                        <a class="card-link" href="news_details.html">                
-                        <div class="card-body-news">
-                            <div class="date-stamp">7</div>
-                            <div class="date-month">Nov</div>
-                            <img src="images/ad_assets/emiliano-vittoriosi-vEN1bsdSjxM-unsplash.jpg" alt="Image Description">
-                            <p>Business</p>
-                            <h6>How To Use Digitalization In The Classroom</h6>
-                            <p>Lorem Ipsum, Lorem Ipsum.</p>
-                        </div>
+                        <a class="card-link" href="news_details.html">
+                            <div class="card-body-news">
+                                <div class="date-stamp">7</div>
+                                <div class="date-month">Nov</div>
+                                <img src="images/ad_assets/emiliano-vittoriosi-vEN1bsdSjxM-unsplash.jpg" alt="Image Description">
+                                <p>Business</p>
+                                <h6>How To Use Digitalization In The Classroom</h6>
+                                <p>Lorem Ipsum, Lorem Ipsum.</p>
+                            </div>
                         </a>
                         <a class="card-link" href="news_details.html">
-                        <div class="card-body-news">
-                            <div class="date-stamp">19</div>
-                            <div class="date-month">Nov</div>
-                            <img src="images/ad_assets/kobu-agency-ipARHaxETRk-unsplash.jpg" alt="Image Description">
-                            <p>Business</p>
-                            <h6>How To Use Digitalization In The Classroom</h6>
-                            <p>Lorem Ipsum, Lorem Ipsum.</p>
-                        </div>
+                            <div class="card-body-news">
+                                <div class="date-stamp">19</div>
+                                <div class="date-month">Nov</div>
+                                <img src="images/ad_assets/kobu-agency-ipARHaxETRk-unsplash.jpg" alt="Image Description">
+                                <p>Business</p>
+                                <h6>How To Use Digitalization In The Classroom</h6>
+                                <p>Lorem Ipsum, Lorem Ipsum.</p>
+                            </div>
                         </a>
                         <!-- Row 2 -->
                         <a class="card-link" href="news_details.html">
-                        <div class="card-body-news">
-                            <div class="date-stamp">20</div>
-                            <div class="date-month">Jan</div>
-                            <img src="images/ad_assets/the-climate-reality-project-Hb6uWq0i4MI-unsplash.jpg" alt="Image Description">
-                            <p>Business</p>
-                            <h6>How To Use Digitalization In The Classroom</h6>
-                            <p>Lorem Ipsum, Lorem Ipsum.</p>
-                        </div>
+                            <div class="card-body-news">
+                                <div class="date-stamp">20</div>
+                                <div class="date-month">Jan</div>
+                                <img src="images/ad_assets/the-climate-reality-project-Hb6uWq0i4MI-unsplash.jpg" alt="Image Description">
+                                <p>Business</p>
+                                <h6>How To Use Digitalization In The Classroom</h6>
+                                <p>Lorem Ipsum, Lorem Ipsum.</p>
+                            </div>
                         </a>
                         <a class="card-link" href="news_details.html">
-                        <div class="card-body-news">
-                            <div class="date-stamp">20</div>
-                            <div class="date-month">Dec</div>
-                            <img src="images/ad_assets/damir-kopezhanov-nC6CyrVBtkU-unsplash.jpg" alt="Image Description">
-                            <p>Business</p>
-                            <h6>How To Use Digitalization In The Classroom</h6>
-                            <p>Lorem Ipsum, Lorem Ipsum.</p>
-                        </div>
+                            <div class="card-body-news">
+                                <div class="date-stamp">20</div>
+                                <div class="date-month">Dec</div>
+                                <img src="images/ad_assets/damir-kopezhanov-nC6CyrVBtkU-unsplash.jpg" alt="Image Description">
+                                <p>Business</p>
+                                <h6>How To Use Digitalization In The Classroom</h6>
+                                <p>Lorem Ipsum, Lorem Ipsum.</p>
+                            </div>
                         </a>
                         <a class="card-link" href="news_details.html">
-                        <div class="card-body-news">
-                            <div class="date-stamp">13</div>
-                            <div class="date-month">Nov</div>
-                            <img src="images/ad_assets/annie-spratt-FSFfEQkd1sc-unsplash.jpg" alt="Image Description">
-                            <p>Business</p>
-                            <h6>How To Use Digitalization In The Classroom</h6>
-                            <p>Lorem Ipsum, Lorem Ipsum.</p>
-                        </div>
+                            <div class="card-body-news">
+                                <div class="date-stamp">13</div>
+                                <div class="date-month">Nov</div>
+                                <img src="images/ad_assets/annie-spratt-FSFfEQkd1sc-unsplash.jpg" alt="Image Description">
+                                <p>Business</p>
+                                <h6>How To Use Digitalization In The Classroom</h6>
+                                <p>Lorem Ipsum, Lorem Ipsum.</p>
+                            </div>
                         </a>
                         <!-- Row 3 -->
                         <a class="card-link" href="news_details.html">
-                        <div class="card-body-news">
-                            <div class="date-stamp">18</div>
-                            <div class="date-month">Feb</div>
-                            <img src="images/ad_assets/carlos-muza-hpjSkU2UYSU-unsplash.jpg" alt="Image Description">
-                            <p>Business</p>
-                            <h6>How To Use Digitalization In The Classroom</h6>
-                            <p>Lorem Ipsum, Lorem Ipsum.</p>
-                        </div>
+                            <div class="card-body-news">
+                                <div class="date-stamp">18</div>
+                                <div class="date-month">Feb</div>
+                                <img src="images/ad_assets/carlos-muza-hpjSkU2UYSU-unsplash.jpg" alt="Image Description">
+                                <p>Business</p>
+                                <h6>How To Use Digitalization In The Classroom</h6>
+                                <p>Lorem Ipsum, Lorem Ipsum.</p>
+                            </div>
                         </a>
                         <a class="card-link" href="news_details.html">
-                        <div class="card-body-news">
-                            <div class="date-stamp">11</div>
-                            <div class="date-month">Feb</div>
-                            <img src="images/ad_assets/marek-levak-zANXcXyByos-unsplash.jpg" alt="Image Description">
-                            <p>Business</p>
-                            <h6>How To Use Digitalization In The Classroom</h6>
-                            <p>Lorem Ipsum, Lorem Ipsum.</p>
-                        </div>  
+                            <div class="card-body-news">
+                                <div class="date-stamp">11</div>
+                                <div class="date-month">Feb</div>
+                                <img src="images/ad_assets/marek-levak-zANXcXyByos-unsplash.jpg" alt="Image Description">
+                                <p>Business</p>
+                                <h6>How To Use Digitalization In The Classroom</h6>
+                                <p>Lorem Ipsum, Lorem Ipsum.</p>
+                            </div>
                         </a>
                         <a class="card-link" href="news_details.html">
-                        <div class="card-body-news">
-                            <div class="date-stamp">1</div>
-                            <div class="date-month">Jan</div>
-                            <img src="images/ad_assets/oli-dale-xjSkI_seiZY-unsplash.jpg" alt="Image Description">
-                            <p>Business</p>
-                            <h6>How To Use Digitalization In The Classroom</h6>
-                            <p>Lorem Ipsum, Lorem Ipsum.</p>
-                        </div>
+                            <div class="card-body-news">
+                                <div class="date-stamp">1</div>
+                                <div class="date-month">Jan</div>
+                                <img src="images/ad_assets/oli-dale-xjSkI_seiZY-unsplash.jpg" alt="Image Description">
+                                <p>Business</p>
+                                <h6>How To Use Digitalization In The Classroom</h6>
+                                <p>Lorem Ipsum, Lorem Ipsum.</p>
+                            </div>
                         </a>
                     </div>
                 </div>
             </div>
-            </div>
-            <!-- Pagination Section -->
-
-            <div class="carousel-controls-container">
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselNewsControls" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselNewsControls" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>            
         </div>
+        <!-- Pagination Section -->
+        <div class="carousel-controls-container">
+            @if (pageNumber > 1)
+         {
+            <button class="carousel-control-prev" type="button" onclick="window.location.href='?page=@(pageNumber - 1)'">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Föregående</span>
+            </button>
+         }
+
+            @if (pageNumber <Math.Ceiling((decimal)totalItems / itemsPerPage))
+         {
+            <button class="carousel-control-next" type="button" onclick="window.location.href='?page=@(pageNumber + 1)'">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Nästa</span>
+            </button>
+         }
+        </div>
+
+    </div>
     </div>
 
 
