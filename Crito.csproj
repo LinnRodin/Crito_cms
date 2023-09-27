@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\" />
     <Folder Include="wwwroot\images\logos\" />
     <Folder Include="wwwroot\images\details\" />
     <Folder Include="wwwroot\images\ad_assets\" />
