@@ -1,8 +1,11 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+﻿@using Crito.Models;
+@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactPage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = "_MasterLayoutBreadcrumb.cshtml";
+    Layout = "_MasterLayoutBreadcrumb.cshtml";
+
+    var contactForm = new Crito.Models.ContactForm();  //Här skapar vi modellen
 }
 
 
@@ -38,18 +41,25 @@
     </div>
     <div class="form-container">
         <h1>Contact Us For Any Questions</h1>
-        <form id="contactForm" asp-controller="" asp-action="" method="post" Novalidate>
-            <input asp-for="" type="text" id="name" placeholder="Name*" required>
+
+        @using (Html.BeginUmbracoForm("Index", "Contacts", FormMethod.Post)) //Måste använda denna metoden istället för form i umbraco. 
+        {
+
+            //<form id="contactForm" asp-controller="Contacts" asp-action="Index" method="post" noValidate> //</form> 
+            
+            <div asp-valdation-summary="ModelOnly"></div>
+
+            <input asp-for="@contactForm.Name" type="text" id="name" placeholder="Name*" required>
             <div id="name-error" class="error-message"></div>
             
-            <input asp-for="" type="email" id="email" placeholder="Email*" required>
+            <input asp-for="@contactForm.Email" type="email" id="email" placeholder="Email*" required>
             <div id="email-error" class="error-message"></div>
             
-            <textarea asp-for="" id="message" placeholder="Your Message*"></textarea>
+            <textarea asp-for="@contactForm.Message" id="message" placeholder="Your Message*"></textarea>
             <div id="message-error" class="error-message"></div>
-            <button type="submit">Send</button>
-        </form>
-        <div id="thank-you-message" class="thank-you-message"></div>
+                <button type="submit">Send</button>
+            <div id="thank-you-message" class="thank-you-message"></div>
+        }
     </div>
 </section>
 
