@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Crito.Models
+@model Crito.Models.SubscribeModel
+
+
+
+<!-- Subscribe -->
+<section class="signup-section">
+    <div class="signup-container">
+        <h1>Get News Updates By Signup</h1>
+        @using (Html.BeginUmbracoForm("Index", "Subscribe", FormMethod.Post))
+        {
+            //<input asp-for="Email" type="email" placeholder="username@domain.com" required>
+            <button type="submit" class="subscribe-btn">Subscribe <i class="fa-solid fa-arrow-trend-up"></i></button>
+        }
+    </div>
+</section>
+
+
+
+
+

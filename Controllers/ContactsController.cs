@@ -13,13 +13,16 @@ namespace Crito.Controllers
 {
     public class ContactsController : SurfaceController
     {
+        
+
+
         public ContactsController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider) : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
         {
-
+            
 
         }
 
-
+        
         [HttpPost]
         public IActionResult Index( ContactForm contactForm)
         {      
@@ -39,5 +42,8 @@ namespace Crito.Controllers
             //return View();
         
         }
+
+
+        
     }
 }
