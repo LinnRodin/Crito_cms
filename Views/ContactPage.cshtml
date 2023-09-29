@@ -45,7 +45,7 @@
         @using (Html.BeginUmbracoForm("Index", "Contacts", FormMethod.Post)) //Måste använda denna metoden istället för form i umbraco. 
         {
 
-            //<form id="contactForm" asp-controller="Contacts" asp-action="Index" method="post" noValidate> //</form> 
+            //<form id="contactForm" asp-controller="Contacts" asp-action="Index" method="post" noValidate> //</form> Funkar inte i umbraco med forms. 
             
             <div asp-valdation-summary="ModelOnly"></div>
 
