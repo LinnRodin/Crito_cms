@@ -37,10 +37,10 @@ namespace Crito.Controllers
                 return RedirectToCurrentUmbracoPage();
             }
 
-            // Här kan du använda SubscriberService för att spara prenumerationen i databasen
+            // sparar prenumerationen i databasen
             _subscriberService.AddSubscriberAsync(subscribeModel).ConfigureAwait(false);
 
-            // Efter att prenumerationen har sparats kan du omdirigera användaren till startsidan
+            //omdirigerar användaren till startsidan
             return RedirectToCurrentUmbracoPage();
         }
     }

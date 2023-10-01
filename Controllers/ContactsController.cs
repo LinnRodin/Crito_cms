@@ -30,7 +30,7 @@ namespace Crito.Controllers
                return CurrentUmbracoPage();
 
 
-            using var mail = new MailService("no-reply@crito.com", "smtp.crito.com", 587, "contact@crito.com", "PreTend123!");
+            using var mail = new MailService("no-reply@crito.com", "smtp.crito.com", 587, "contact@crito.com", "PreTend123!"); //Instansiering för e-postmedd. (smtp = e-post server)
 
             mail.SendAsync(contactForm.Email, "A contact request was received.", "Your request was received and we will be in contact with you as soon as possible.").ConfigureAwait(false); //to sender
             mail.SendAsync("umbraco@crito.com", $"{contactForm.Name} sent a contact request.", contactForm.Message).ConfigureAwait(false); //to receiver/us

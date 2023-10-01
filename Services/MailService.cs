@@ -15,7 +15,7 @@ public class MailService : IDisposable   // Används för att "tömma/rensa".
     private string _username;
     private string _password;
 
-    private MailKit.Net.Smtp.SmtpClient _client; //Här finns den
+    private MailKit.Net.Smtp.SmtpClient _client; 
 
     public MailService(string from, string smtp, int port, string username, string password)
     {
@@ -25,7 +25,7 @@ public class MailService : IDisposable   // Används för att "tömma/rensa".
         _username = username;
         _password = password;
         
-        _client = new MailKit.Net.Smtp.SmtpClient(); // Här tilldelar vi den
+        _client = new MailKit.Net.Smtp.SmtpClient(); // Här tilldelar vi den -  Skapar en instans av SmtpClient.
 
 
     }
@@ -36,13 +36,13 @@ public class MailService : IDisposable   // Används för att "tömma/rensa".
 
         try
         {
-            var email = new MimeMessage();
-            email.From.Add(MailboxAddress.Parse(_from));
-            email.To.Add(MailboxAddress.Parse(to));
-            email.Subject = subject;
-            email.Body = new TextPart(TextFormat.Html) { Text = body };
+            var email = new MimeMessage();              // Skapa ett MimeMessage-objekt för att representera e-postmeddelandet
+            email.From.Add(MailboxAddress.Parse(_from));  // Ange avsändarens e-postadress.
+            email.To.Add(MailboxAddress.Parse(to));  // Ange mottagarens e-postadress.
+            email.Subject = subject; // Ange ämnet för e-postmeddelandet.
+            email.Body = new TextPart(TextFormat.Html) { Text = body };  // Ange meddelandetexten i HTML-format
 
-            
+
             await _client.ConnectAsync(_smtp, _port, SecureSocketOptions.StartTls);
             await _client.AuthenticateAsync(_username, _password);
 
@@ -51,10 +51,11 @@ public class MailService : IDisposable   // Används för att "tömma/rensa".
             
         catch (Exception ex)
         {
-            Debug.WriteLine(ex.Message);
-        
+            Debug.WriteLine(ex.Message);  // Logga eventuella felmeddelanden
+
         }
     }
+
 
     public void Dispose()
     {
@@ -66,9 +67,9 @@ public class MailService : IDisposable   // Används för att "tömma/rensa".
     {
         if (disposing)
         
-          _client.DisconnectAsync(true).ConfigureAwait(false);
-        
-        
+          _client.DisconnectAsync(true).ConfigureAwait(false);   // Avsluta anslutningen till SMTP-servern vid borttagning.
+
+
     }
 
 
