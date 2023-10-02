@@ -496,7 +496,7 @@ a:visited {
   gap: 20px;
 }
 .custom-section .container .left-column {
-  width: 28%;
+  width: 30%;
   padding-right: 15px;
 }
 .custom-section .container .left-column h6 {
@@ -523,7 +523,7 @@ a:visited {
 }
 .custom-section .container .left-column .cards .card {
   width: 330px;
-  height: 157.5px;
+  height: 125px;
   display: flex;
   align-items: start;
   border: none;
@@ -566,7 +566,6 @@ a:visited {
   left: 33%;
   transform: translateX(-65%);
 }
-
 .project-section .container {
   width: 1320px;
   height: 1400px;

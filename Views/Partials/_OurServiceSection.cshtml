@@ -8,7 +8,7 @@
     <div class="container">
         <h6 class="our-services">@Model.Value("ourServicesSectionTitle")</h6>
         <h1>@Model.Value("ourServicesSectionHeading")</h1>
-        <div class="content-box d-flex justify-content-between flex-wrap">
+        <div class="content-box">
            @Html.GetBlockListHtml(Model.OurServices)
         </div>
         <a href="@Model.Value("ourServicesSectionButtonUrl")" class="browse-btn" role="button">@Model.Value("ourServicesSectionButtonText")<i class="fa-solid fa-arrow-trend-up"></i></a>
