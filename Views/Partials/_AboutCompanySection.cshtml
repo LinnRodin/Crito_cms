@@ -4,7 +4,17 @@
         <div class="container">
             <!-- Vänster sida -->
             <div class="left-side">
-                <img src="@Model.Value("aboutImage")" alt="Samantha-Brown">
+                @{
+                    var mediaPickerValue = Model.Value<IPublishedContent>("aboutImage");
+                    string imageUrl = null;
+    
+                    if (mediaPickerValue != null && mediaPickerValue.ContentType.Alias.Equals("Image"))
+                    {
+                        imageUrl = mediaPickerValue.Url();
+                    }
+                }
+                    <img src="@imageUrl" alt="Samantha-Brown">
+
                 <div class="blue-box">
                     <h2>Samantha Brown, <span class="title">Founder</span></h2>
                     <p>Lorem ipsum lorem ipsum</p>

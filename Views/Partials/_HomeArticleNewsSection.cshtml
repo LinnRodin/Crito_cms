@@ -1,6 +1,6 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models.PublishedContent
 
-<!-- Article and News -->
 <div class="wrapper-article">
     <div class="container-article">
         <!-- Header Section -->
@@ -15,28 +15,35 @@
                 </button>
             </div>
         </div>
-        
+
         <!-- Carousel Section -->
         <div class="carousel-article">
             <div class="carousel-wrapper">
-                <div class="card-article">
-                    <img src="images/linkedin-sales-solutions-Mis5fyJi7Q0-unsplash.jpg" alt="Image Description">
-                    <p>Business</p>
-                    <h6>How To Use Digitalization In The Classroom</h6>
-                    <p>Lorem Ipsum, Lorem Ipsum.</p>
-                </div>
-                <div class="card-article">
-                    <img src="images/emiliano-vittoriosi-vEN1bsdSjxM-unsplash.jpg" alt="Image Description">
-                    <p>Business</p>
-                    <h6>How To Use Digitalization In The Classroom</h6>
-                    <p>Lorem Ipsum, Lorem Ipsum.</p>
-                </div>
-                <div class="card-article">
-                    <img src="images/kobu-agency-ipARHaxETRk-unsplash.jpg" alt="Image Description">
-                    <p>Business</p>
-                    <h6>How To Use Digitalization In The Classroom</h6>
-                    <p>Lorem Ipsum, Lorem Ipsum.</p>
-                </div>
+                @{
+                    var articles = Model.Value<IEnumerable<IPublishedContent>>("articles");
+                }
+
+                @if (articles != null && articles.Any())
+                {
+                    foreach (var article in articles.Take(3))
+                    {
+                        var imageUrl = article.Value<string>("newsImage");
+                        var category = article.Value<string>("newsCategory");
+                        var title = article.Name;
+                        var description = article.Value<string>("newsContent");
+
+                        <div class="card-article">
+                            <img src="@imageUrl" alt="Image Description">
+                            <p>@category</p>
+                            <h6>@title</h6>
+                            <p>@description</p>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No articles available.</p>
+                }
             </div>
             <!-- Indicators -->
             <div class="carousel-article-news">
@@ -47,3 +54,4 @@
         </div>
     </div>
 </div>
+
