@@ -37,10 +37,7 @@ namespace Crito.Controllers
 
             return LocalRedirect(contactForm.RedirectUrl ?? "/");
             
-            // return RedirectToCurrentUmbracoPage();
-
-            //return View();
-        
+          
         }
 
 
